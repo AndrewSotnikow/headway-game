@@ -1,6 +1,12 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 
 import './globals.css';
+
+const interFont = Inter({
+  variable: '--font-inter',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Who wants to be a millionaire?',
@@ -14,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={interFont.variable}>{children}</body>
     </html>
   );
 }
