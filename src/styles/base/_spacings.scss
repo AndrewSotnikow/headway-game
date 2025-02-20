@@ -10,9 +10,9 @@
 $pt: 0, 4, 8, 12, 14, 16;
 
 @each $p in $pt {
-    .-pt#{$p} {
-        padding-top: #{$p}px;
-    }
+  .-pt#{$p} {
+    padding-top: #{$p}px;
+  }
 }
 
 /* Padding top - lg
@@ -21,11 +21,11 @@ $pt: 0, 4, 8, 12, 14, 16;
 $pt_lg: 0;
 
 @include respond-below(lg) {
-    @each $p in $pt_lg {
-        .-pt#{$p}lg {
-            padding-top: #{$p}px;
-        }
+  @each $p in $pt_lg {
+    .-pt#{$p}lg {
+      padding-top: #{$p}px;
     }
+  }
 }
 
 /* Padding top - md
@@ -34,22 +34,22 @@ $pt_lg: 0;
 $pt_md: 0, 8, 16;
 
 @include respond-below(md) {
-    @each $p in $pt_md {
-        .-pt#{$p}md {
-            padding-top: #{$p}px;
-        }
+  @each $p in $pt_md {
+    .-pt#{$p}md {
+      padding-top: #{$p}px;
     }
+  }
 }
 
 /* Padding bottom
  ========================================================================== */
 
-$pb: 0, 2, 4, 8 ;
+$pb: 0, 2, 4, 8;
 
 @each $p in $pb {
-    .-pb#{$p} {
-        padding-bottom: #{$p}px;
-    }
+  .-pb#{$p} {
+    padding-bottom: #{$p}px;
+  }
 }
 
 /* Padding bottom - md
@@ -58,11 +58,11 @@ $pb: 0, 2, 4, 8 ;
 $pb_md: 0, 8, 12, 16;
 
 @include respond-below(md) {
-    @each $p in $pb_md {
-        .-pb#{$p}md {
-            padding-bottom: #{$p}px;
-        }
+  @each $p in $pb_md {
+    .-pb#{$p}md {
+      padding-bottom: #{$p}px;
     }
+  }
 }
 
 /* Padding bottom - sm
@@ -71,11 +71,11 @@ $pb_md: 0, 8, 12, 16;
 $pb_sm: 0;
 
 @include respond-below(sm) {
-    @each $p in $pb_sm {
-        .-pb#{$p}sm {
-            padding-bottom: #{$p}px;
-        }
+  @each $p in $pb_sm {
+    .-pb#{$p}sm {
+      padding-bottom: #{$p}px;
     }
+  }
 }
 
 /* Margin top
@@ -84,9 +84,9 @@ $pb_sm: 0;
 $mt: 0, 2, 4, 6, 8, 10, 12, 14, 16;
 
 @each $m in $mt {
-    .-mt#{$m} {
-        margin-top: #{$m}px;
-    }
+  .-mt#{$m} {
+    margin-top: #{$m}px;
+  }
 }
 
 /* Padding top - lg
@@ -95,11 +95,11 @@ $mt: 0, 2, 4, 6, 8, 10, 12, 14, 16;
 $mt_lg: 0, 28;
 
 @include respond-below(lg) {
-    @each $p in $mt_lg {
-        .-mt#{$p}lg {
-            margin-top: #{$p}px;
-        }
+  @each $p in $mt_lg {
+    .-mt#{$p}lg {
+      margin-top: #{$p}px;
     }
+  }
 }
 
 /* Margin top - md
@@ -108,11 +108,11 @@ $mt_lg: 0, 28;
 $mt_md: 0, 4, 8, 12, 16;
 
 @include respond-below(md) {
-    @each $m in $mt_md {
-        .-mt#{$m}md {
-            margin-top: #{$m}px;
-        }
+  @each $m in $mt_md {
+    .-mt#{$m}md {
+      margin-top: #{$m}px;
     }
+  }
 }
 
 /* Margin top - sm
@@ -121,11 +121,11 @@ $mt_md: 0, 4, 8, 12, 16;
 $mt_sm: 24;
 
 @include respond-below(sm) {
-    @each $m in $mt_sm {
-        .-mt#{$m}sm {
-            margin-top: #{$m}px;
-        }
+  @each $m in $mt_sm {
+    .-mt#{$m}sm {
+      margin-top: #{$m}px;
     }
+  }
 }
 
 /* Margin right
@@ -134,9 +134,9 @@ $mt_sm: 24;
 $mr: 0, 8;
 
 @each $m in $mr {
-    .-mr#{$m} {
-        margin-right: #{$m}px;
-    }
+  .-mr#{$m} {
+    margin-right: #{$m}px;
+  }
 }
 
 /* Margin right - md
@@ -145,11 +145,11 @@ $mr: 0, 8;
 $mr_md: 0, 16;
 
 @include respond-below(md) {
-    @each $m in $mr_md {
-        .-mr#{$m}md {
-            margin-right: #{$m}px !important;
-        }
+  @each $m in $mr_md {
+    .-mr#{$m}md {
+      margin-right: #{$m}px !important;
     }
+  }
 }
 
 /* Margin left - md
@@ -158,11 +158,11 @@ $mr_md: 0, 16;
 $ml_md: 0, 16;
 
 @include respond-below(md) {
-    @each $m in $ml_md {
-        .-ml#{$m}md {
-            margin-left: #{$m}px !important;
-        }
+  @each $m in $ml_md {
+    .-ml#{$m}md {
+      margin-left: #{$m}px !important;
     }
+  }
 }
 
 /* Margin bottom
@@ -171,9 +171,9 @@ $ml_md: 0, 16;
 $mb: 0, 2, 4, 8, 10, 12, 16;
 
 @each $m in $mb {
-    .-mb#{$m} {
-        margin-bottom: #{$m}px;
-    }
+  .-mb#{$m} {
+    margin-bottom: #{$m}px;
+  }
 }
 
 /* Margin bottom - md
@@ -182,11 +182,11 @@ $mb: 0, 2, 4, 8, 10, 12, 16;
 $mb_md: 0, 8, 10, 12, 16;
 
 @include respond-below(md) {
-    @each $m in $mb_md {
-        .-mb#{$m}md {
-            margin-bottom: #{$m}px;
-        }
+  @each $m in $mb_md {
+    .-mb#{$m}md {
+      margin-bottom: #{$m}px;
     }
+  }
 }
 
 /* Margin bottom - sm
@@ -195,9 +195,9 @@ $mb_md: 0, 8, 10, 12, 16;
 $mb_sm: 0;
 
 @include respond-below(sm) {
-    @each $m in $mb_sm {
-        .-mb#{$m}sm {
-            margin-bottom: #{$m}px;
-        }
+  @each $m in $mb_sm {
+    .-mb#{$m}sm {
+      margin-bottom: #{$m}px;
     }
+  }
 }

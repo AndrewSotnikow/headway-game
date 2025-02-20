@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '@/styles/base/_index.scss';
+import '@/styles/global.scss';
 import { ReactNode } from 'react';
 
 const interFont = Inter({

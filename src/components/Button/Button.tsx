@@ -1,14 +1,15 @@
 import React, { ReactNode } from 'react';
+import './Button.scss';
+import { clsx } from 'clsx';
 
-import './button.module.scss';
 import { IButtonProps } from '@/components/Button/type';
 
-const Button = ({
+export const Button = ({
   layout = 'primary',
   loading = false,
   disabled = false,
   children,
-  css,
+  classNames,
   onClick,
   icon,
   iconPosition = 'left',
@@ -19,9 +20,11 @@ const Button = ({
   const loadingClass = loading ? ' -loading -disabled' : '';
   const extraClass = `${layoutClass}${loadingClass}${disabledClass}`;
 
+  const computedClassName = clsx(baseClass, extraClass, classNames);
+
   return (
     <button
-      className={`${baseClass} ${css || ''}${extraClass}`}
+      className={computedClassName}
       data-testid="button"
       disabled={disabled || loading}
       onClick={onClick}
@@ -41,5 +44,3 @@ const Button = ({
     </button>
   );
 };
-
-export default Button;

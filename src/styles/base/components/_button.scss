@@ -1,0 +1,47 @@
+@use '../typography' as *;
+@use '../vars' as *;
+@use '../mixins' as *;
+
+/*========================================================================== */
+
+.c-btn {
+  @include typo_inter_20-23;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  text-align: center;
+  user-select: none;
+  border-radius: 12px;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
+  border: 0;
+
+  [class^='icon-'] {
+    display: inline-block;
+    font-size: 24px;
+  }
+
+  &.-primary {
+    color: $color-white-default;
+    background-color: $color-orange-default;
+
+    &:hover {
+      @include respond-above(md) {
+        background-color: $color-orange-hover;
+      }
+    }
+
+    &.-alt {
+      background-color: $color-orange-light;
+    }
+  }
+  &.-disabled {
+    color: $color-gray-default;
+    pointer-events: none;
+    cursor: default;
+    background-color: $color-gray-light;
+  }
+}

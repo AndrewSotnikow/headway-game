@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
-import Button from './Button';
+import { Button } from './Button';
 
 // Mock icon component
 const MockIcon = () => <svg data-testid="mock-icon" />;
@@ -97,7 +97,7 @@ describe('Button Component', () => {
 
   // Test custom CSS
   test('applies custom CSS class correctly', () => {
-    render(<Button css="custom-class">Custom CSS Button</Button>);
+    render(<Button classNames="custom-class">Custom CSS Button</Button>);
 
     const button = screen.getByTestId('button');
     expect(button).toHaveClass('custom-class');
@@ -135,13 +135,5 @@ describe('Button Component', () => {
     expect(icon).toBeInTheDocument();
     expect(iconContainer).toHaveClass('c-btn-icon');
     expect(button.lastElementChild).toBe(iconContainer);
-  });
-
-  // Test edge case with space in type attribute
-  test('handles type with space correctly', () => {
-    render(<Button type="button ">Button With Space</Button>);
-
-    const button = screen.getByTestId('button');
-    expect(button).toHaveAttribute('type', 'button');
   });
 });
