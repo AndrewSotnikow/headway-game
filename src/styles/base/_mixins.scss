@@ -1,0 +1,71 @@
+//// media queries
+
+// media queries for above breakpoints
+// usage: @include respond-below(sm) {...}
+
+@use 'vars' as *;
+
+@mixin respond-below($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media (max-width: ($breakpoint-value - 1)) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+@mixin respond-above($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+        @media (min-width: ($breakpoint-value)) {
+            @content;
+        }
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+// getting breakpoints values
+// usage: @include respond-below(sm) {...}
+
+@function breakpoint($breakpointName) {
+    @if map-has-key($breakpoints, $breakpointName) {
+        @return map-get($breakpoints, $breakpointName);
+    } @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}
+
+// visibility modifying classes
+// usage: class="-hideBelow-md"
+
+@mixin hide-below() {
+    @each $key, $value in $breakpoints {
+        .-hideBelow-#{$key} {
+            @media (max-width: ($value - 1)) {
+                display: none;
+            }
+        }
+    }
+}
+
+@include hide-below();
+
+@mixin hide-above() {
+    @each $key, $value in $breakpoints {
+        .-hideAbove-#{$key} {
+            @media (min-width: ($value)) {
+                display: none;
+            }
+        }
+    }
+}
+
+@include hide-above();
+
+
+
+

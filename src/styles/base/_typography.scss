@@ -1,0 +1,115 @@
+/* ==========================================================================
+Typography
+========================================================================== */
+
+@use 'sass:math';
+@use 'vars' as *;
+@use 'mixins' as *;
+
+body {
+    font-family: $font-family-inter;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 23.2px;
+    color: $color-black-default;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*========================================================================== */
+
+
+@mixin typo_inter_56-64 {
+    font-family: $font-family-inter;
+    font-size: 56px;
+    line-height: math.div(64.96, 56);
+}
+@mixin typo_inter_32-37 {
+    font-family: $font-family-inter;
+    font-size: 56px;
+    line-height: math.div(37, 32);
+}
+@mixin typo_inter_24-48 {
+    font-family: $font-family-inter;
+    font-size: 56px;
+    line-height: math.div(48, 24);
+}
+@mixin typo_inter_20-23 {
+    font-family: $font-family-inter;
+    font-size: 56px;
+    line-height: math.div(23, 20);
+}
+@mixin typo_inter_18-20 {
+    font-family: $font-family-inter;
+    font-size: 56px;
+    line-height: math.div(20, 18);
+}
+@mixin typo_inter_14-16 {
+    font-family: $font-family-inter;
+    font-size: 14px;
+    line-height: math.div(16.24, 14);
+}
+
+/*========================================================================== */
+
+// Desktop fonts
+.t-title {
+    @include typo_inter_32-37;
+    font-weight: 600;
+
+    &.-f56 {
+        @include typo_inter_56-64;
+    }
+    &.-f32 {
+        @include typo_inter_32-37;
+    }
+    br {
+        @include respond-below(sm) {
+            display: none;
+        }
+    }
+}
+
+// Mobile fonts
+
+.t-title {
+    @include typo_inter_18-20;
+    font-weight: 600;
+
+    @include respond-below(md) {
+        &.-f32md {
+            @include typo_inter_32-37;
+        }
+        &.-f20md {
+            @include typo_inter_18-20;
+        }
+    }
+}
+
+/*========================================================================== */
+
+// Desktop fonts
+.t-text {
+    @include typo_inter_20-23;
+    font-weight: 400;
+    &.-f20 {
+    @include typo_inter_20-23;
+    }
+    &.-f20_bold {
+        @include typo_inter_20-23;
+        font-weight: 600;
+    }
+}
+
+// Mobile fonts
+.t-text {
+    @include respond-below(md) {
+        @include typo_inter_18-20;
+        &.-f18md {
+            @include typo_inter_18-20;
+        }
+        &.-f14md {
+            @include typo_inter_14-16;
+        }
+    }
+}
