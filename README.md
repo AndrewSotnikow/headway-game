@@ -19,32 +19,36 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🛠 Technologies Used
-### 🏗 Frameworks & Libraries
+## Technologies Used
+### Frameworks & Libraries
 * Next.js 15 - Optimized React framework for SSR, static generation, and API routes.
 * React 19 - Latest version of React with concurrent rendering improvements.
 * Zustand - Lightweight state management with persistence support.
 * Framer Motion - For smooth animations and transitions.
 * SASS (SCSS) - Modular styling with BEM methodology.
 
-## 📌 Features
-### 💾 State Persistence
+## Features
+
+### React optimization
+* In this scenario, applying advanced React optimizations would be overkill.
+
+### State Persistence
 * Uses Zustand persist middleware to retain game progress across page reloads.
 * Ensures smooth user experience even if the page refreshes unexpectedly.
 
-### 🔥 Error Handling & Boundaries
+### Error Handling & Boundaries
 * Implements React Error Boundaries using react-error-boundary.
 * Catches runtime errors and prevents the entire app from crashing.
 
-### 🎨 Modular & Scalable Codebase
+### Modular & Scalable Codebase
 * SCSS Modules for better organization and maintainability.
 * Component-Based Architecture for reusability and better scalability.
 
-### 🛠 Developer Experience
+### Developer Experience
 * ESLint & Prettier for consistent code formatting.
 * Husky + Lint-Staged to enforce linting and testing before commits.
 * Jest & React Testing Library for robust unit and integration testing.
 
-### ✅ Testing
+### Testing
 * Uses Jest and React Testing Library for unit tests.
 * Ensures game logic and UI work as expected through automated tests.
