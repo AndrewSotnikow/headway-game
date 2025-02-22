@@ -89,7 +89,7 @@ describe('GameOver Component', () => {
     expect(mockReplace).toHaveBeenCalledWith('/game');
   });
 
-  it('redirects to home page if isGameOver is false', () => {
+  it('calls onGameReset and router.replace on Try again click', () => {
     (useGameStore as jest.Mock).mockReturnValue({
       isGameOver: false,
       totalPrize: 0,
@@ -98,6 +98,9 @@ describe('GameOver Component', () => {
 
     render(<GameOver />);
 
+    fireEvent.click(screen.getByRole('button', { name: /Try again/i }));
+
+    expect(mockOnGameReset).toHaveBeenCalled();
     expect(mockReplace).toHaveBeenCalledWith('/');
   });
 });

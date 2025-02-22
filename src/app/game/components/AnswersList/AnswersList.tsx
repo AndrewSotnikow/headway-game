@@ -30,7 +30,7 @@ export const AnswersList = ({
               isCorrect={isCorrect}
               isSelected={isSelected}
               isAnswerShown={isAnswerRevealed}
-              className={'c-answersList_answer'}
+              classNames={'c-answersList_answer'}
               onClick={() => onAnswerSelect(id)}
             >
               <div className={'c-answersList_answer-text'}>
