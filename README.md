@@ -1,8 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏆 Headway Game - Who Wants to Be a Millionaire? 🎮
 
-## Getting Started
+A **Who Wants to Be a Millionaire** quiz game built with **Next.js**, featuring **state persistence**, **error boundaries**, **SCSS styling**, and a modular, scalable architecture.
 
-First, run the development server:
+## 🚀 Getting Started
+
+### **Installation**
+Clone the repository and install dependencies:
 
 ```bash
 npm run dev
@@ -16,21 +19,32 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Technologies Used
+### 🏗 Frameworks & Libraries
+* Next.js 15 - Optimized React framework for SSR, static generation, and API routes.
+* React 19 - Latest version of React with concurrent rendering improvements.
+* Zustand - Lightweight state management with persistence support.
+* Framer Motion - For smooth animations and transitions.
+* SASS (SCSS) - Modular styling with BEM methodology.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📌 Features
+### 💾 State Persistence
+* Uses Zustand persist middleware to retain game progress across page reloads.
+* Ensures smooth user experience even if the page refreshes unexpectedly.
 
-## Learn More
+### 🔥 Error Handling & Boundaries
+* Implements React Error Boundaries using react-error-boundary.
+* Catches runtime errors and prevents the entire app from crashing.
 
-To learn more about Next.js, take a look at the following resources:
+### 🎨 Modular & Scalable Codebase
+* SCSS Modules for better organization and maintainability.
+* Component-Based Architecture for reusability and better scalability.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🛠 Developer Experience
+* ESLint & Prettier for consistent code formatting.
+* Husky + Lint-Staged to enforce linting and testing before commits.
+* Jest & React Testing Library for robust unit and integration testing.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### ✅ Testing
+* Uses Jest and React Testing Library for unit tests.
+* Ensures game logic and UI work as expected through automated tests.
