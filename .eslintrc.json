@@ -17,7 +17,10 @@
   ],
   "rules": {
     "prettier/prettier": ["error"],
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx", ".js", ".ts"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".tsx", ".jsx", ".js", ".ts"] }
+    ],
     "import/extensions": [
       "error",
       "ignorePackages",

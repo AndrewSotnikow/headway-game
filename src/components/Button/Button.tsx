@@ -5,7 +5,6 @@ import { clsx } from 'clsx';
 import { IButtonProps } from '@/components/Button/type';
 
 export const Button = ({
-  layout = 'primary',
   loading = false,
   disabled = false,
   children,
@@ -15,10 +14,9 @@ export const Button = ({
   iconPosition = 'left',
 }: IButtonProps): ReactNode => {
   const baseClass = 'c-btn';
-  const layoutClass = ` -${layout}`;
   const disabledClass = disabled ? ' -disabled' : '';
   const loadingClass = loading ? ' -loading -disabled' : '';
-  const extraClass = `${layoutClass}${loadingClass}${disabledClass}`;
+  const extraClass = `${loadingClass}${disabledClass}`;
 
   const computedClassName = clsx(baseClass, extraClass, classNames);
 

@@ -1,0 +1,48 @@
+@use '@/styles/base' as *;
+
+
+.c-prizesMobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: $color-gray-light;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+
+  &--open {
+    transform: translateX(-100%);
+  }
+
+  @include respond-below(md) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_menuButton {
+    position: fixed;
+    display: none;
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+
+    @include respond-below(md) {
+      display: block;
+
+      path {
+        fill: $color-black-default;
+      }
+    }
+  }
+
+
+}
+
+

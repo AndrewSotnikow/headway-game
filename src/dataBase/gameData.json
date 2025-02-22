@@ -1,0 +1,166 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "text": "What is the only letter that doesn’t appear in any U.S. state name?",
+      "answers": [
+        { "id": "A", "text": "letter Q", "isCorrect": true },
+        { "id": "B", "text": "letter Z", "isCorrect": false },
+        { "id": "C", "text": "letter X", "isCorrect": false },
+        { "id": "D", "text": "letter J", "isCorrect": false }
+      ],
+      "reward": 500,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 2,
+      "text": "Which of these animals can recognize itself in a mirror?",
+      "answers": [
+        { "id": "A", "text": "Dolphin", "isCorrect": true },
+        { "id": "B", "text": "Elephant", "isCorrect": true },
+        { "id": "C", "text": "Dog", "isCorrect": false },
+        { "id": "D", "text": "Parrot", "isCorrect": true },
+        { "id": "E", "text": "Cat", "isCorrect": false }
+      ],
+      "reward": 1000,
+      "minCorrectAnswersCount": 3
+    },
+    {
+      "id": 3,
+      "text": "Which planet in our solar system is actually hotter than Mercury?",
+      "answers": [
+        { "id": "A", "text": "Mars", "isCorrect": false },
+        { "id": "B", "text": "Venus", "isCorrect": true },
+        { "id": "C", "text": "Jupiter", "isCorrect": false }
+      ],
+      "reward": 2000,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 4,
+      "text": "What are the ingredients of a classic BLT sandwich?",
+      "answers": [
+        { "id": "A", "text": "Bacon", "isCorrect": true },
+        { "id": "B", "text": "Lettuce", "isCorrect": true },
+        { "id": "C", "text": "Tomato", "isCorrect": true },
+        { "id": "D", "text": "Butter", "isCorrect": false }
+      ],
+      "reward": 3000,
+      "minCorrectAnswersCount": 3
+    },
+    {
+      "id": 5,
+      "text": "Which of these things were invented by accident?",
+      "answers": [
+        { "id": "A", "text": "Microwave", "isCorrect": true },
+        { "id": "B", "text": "Potato Chips", "isCorrect": true },
+        { "id": "C", "text": "Penicillin", "isCorrect": true },
+        { "id": "D", "text": "Tesla Electric Car", "isCorrect": false },
+        { "id": "E", "text": "Super Glue", "isCorrect": true }
+      ],
+      "reward": 4000,
+      "minCorrectAnswersCount": 4
+    },
+    {
+      "id": 6,
+      "text": "What unusual law exists in Switzerland about owning a guinea pig?",
+      "answers": [
+        { "id": "A", "text": "You must own at least two", "isCorrect": true },
+        {
+          "id": "B",
+          "text": "They must be given a bath once a week",
+          "isCorrect": false
+        },
+        {
+          "id": "C",
+          "text": "They are considered wild animals",
+          "isCorrect": false
+        },
+        {
+          "id": "D",
+          "text": "It is illegal to sell them in pet stores",
+          "isCorrect": false
+        }
+      ],
+      "reward": 8000,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 7,
+      "text": "Which country consumes the most coffee per capita?",
+      "answers": [
+        { "id": "A", "text": "United States", "isCorrect": false },
+        { "id": "B", "text": "Brazil", "isCorrect": false },
+        { "id": "C", "text": "Finland", "isCorrect": true },
+        { "id": "D", "text": "Italy", "isCorrect": false }
+      ],
+      "reward": 16000,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 8,
+      "text": "What is the correct way to spell the sound a duck makes?",
+      "answers": [
+        { "id": "A", "text": "Quack", "isCorrect": true },
+        { "id": "B", "text": "Kwack", "isCorrect": false },
+        { "id": "C", "text": "Cuak", "isCorrect": false },
+        { "id": "D", "text": "Qwak", "isCorrect": false },
+        { "id": "E", "text": "Quakk", "isCorrect": false }
+      ],
+      "reward": 32000,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 9,
+      "text": "Which of these tech companies was started in a garage?",
+      "answers": [
+        { "id": "A", "text": "Apple", "isCorrect": true },
+        { "id": "B", "text": "Amazon", "isCorrect": true },
+        { "id": "C", "text": "Google", "isCorrect": true },
+        { "id": "D", "text": "Facebook", "isCorrect": false }
+      ],
+      "reward": 64000,
+      "minCorrectAnswersCount": 3
+    },
+    {
+      "id": 10,
+      "text": "Which human body part is completely unique to each person?",
+      "answers": [
+        { "id": "A", "text": "Fingerprint", "isCorrect": true },
+        { "id": "B", "text": "Tongue print", "isCorrect": true },
+        { "id": "C", "text": "Ear shape", "isCorrect": true },
+        { "id": "D", "text": "Nose size", "isCorrect": false }
+      ],
+      "reward": 125000,
+      "minCorrectAnswersCount": 3
+    },
+    {
+      "id": 11,
+      "text": "What is the loudest sound ever recorded on Earth?",
+      "answers": [
+        { "id": "A", "text": "A volcanic eruption", "isCorrect": true },
+        { "id": "B", "text": "A jet engine", "isCorrect": false },
+        { "id": "C", "text": "A blue whale's call", "isCorrect": false },
+        { "id": "D", "text": "A sonic boom", "isCorrect": false }
+      ],
+      "reward": 500000,
+      "minCorrectAnswersCount": 1
+    },
+    {
+      "id": 12,
+      "text": "What happens if you drop a cat and a buttered toast at the same time?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "They both land butter-side down",
+          "isCorrect": false
+        },
+        { "id": "B", "text": "The cat lands on its feet", "isCorrect": true },
+        { "id": "C", "text": "An infinite loop occurs", "isCorrect": false },
+        { "id": "D", "text": "The toast sticks to the cat", "isCorrect": false }
+      ],
+      "reward": 1000000,
+      "minCorrectAnswersCount": 1
+    }
+  ]
+}

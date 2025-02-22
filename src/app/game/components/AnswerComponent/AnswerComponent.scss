@@ -1,0 +1,114 @@
+@use '@/styles/base' as *;
+
+/*========================================================================== */
+
+.c-answer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 421px;
+  height: 72px;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
+
+  @include respond-below(md) {
+    width: 100%;
+    height: 56px;
+  }
+
+  &:hover .c-answer-svg path {
+    stroke: $color-orange-default;
+  }
+  &:hover .c-answer-divider {
+    background-color: $color-orange-default;
+  }
+
+  &-selected .c-answer-svg path {
+    stroke: $color-orange-default;
+  }
+
+  &-selected .c-answer-divider {
+    background-color: $color-orange-default;
+  }
+
+  &-correct .c-answer-svg path {
+    fill: $color-green-light;
+    stroke: $color-green-default;
+  }
+
+  &-correct .c-answer-divider {
+    background-color: $color-green-default;
+  }
+
+  &-wrong .c-answer-svg path {
+    fill: $color-red-light;
+    stroke: $color-red-default;
+  }
+
+  &-wrong .c-answer-divider {
+    background-color: $color-red-default;
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    @include respond-below(md) {
+      height: 56px;
+    }
+  }
+
+  &-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    pointer-events: none;
+  }
+
+  &-svg path {
+    fill: $color-white-default;
+    stroke: $color-gray-default;
+    transition:
+      fill 0.3s ease-in-out,
+      stroke 0.3s ease-in-out;
+  }
+
+  &-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+    color: $color-black-default;
+    padding-left: 32px;
+    padding-right: 32px;
+    z-index: 1;
+
+    @include respond-below(xl) {
+      padding-left: 24px;
+      padding-right: 24px;
+
+      justify-content: center;
+    }
+  }
+
+  &-divider {
+    width: 17px;
+    height: 1px;
+    background-color: $color-gray-default;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .c-btn{
+    width: 100%
+  }
+}

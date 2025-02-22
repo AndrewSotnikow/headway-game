@@ -1,2 +1,4 @@
-export { Typography } from './Typography/Typography';
-export { Button } from './Button/Button';
+export { Typography } from './Typography';
+export { Button } from './Button';
+export { ErrorFallback } from './ErrorFallback';
+export { Step } from './Step';

@@ -81,12 +81,11 @@ Typography
 .t-text {
   @include typo_inter_20-23;
   font-weight: 400;
+  &.-f32 {
+    @include typo_inter_32-37;
+  }
   &.-f20 {
     @include typo_inter_20-23;
-  }
-  &.-f20_bold {
-    @include typo_inter_20-23;
-    font-weight: 600;
   }
 }
 
@@ -101,4 +100,8 @@ Typography
       @include typo_inter_14-16;
     }
   }
+}
+
+.-bold {
+  font-weight: 600;
 }
