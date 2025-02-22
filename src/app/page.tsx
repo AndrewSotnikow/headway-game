@@ -27,28 +27,26 @@ export default function Home() {
       }
       transition={{ duration: 0.8, ease: 'easeInOut' }}
     >
-      <motion.div className={'startScreen_content'}>
-        <div className="startScreen startScreen_background">
-          <div className={'startScreen_content'}>
-            <Hero className={'startScreen_image'} />
-            <div className={'startScreen_wrapper'}>
-              <Typography
-                tag="h1"
-                classNames={['startScreen_text', 't-title', '-f32md', '-f56']}
-              >
-                Who wants to be a millionaire?
-              </Typography>
+      <div className="startScreen startScreen_background">
+        <div className={'startScreen_content'}>
+          <Hero className={'startScreen_image'} />
+          <div className={'startScreen_wrapper'}>
+            <Typography
+              tag="h1"
+              classNames={['startScreen_text', 't-title', '-f32md', '-f56']}
+            >
+              Who wants to be a millionaire?
+            </Typography>
 
-              <Button
-                classNames="t-title -f20 -f14md -primary"
-                onClick={handleStart}
-              >
-                Start
-              </Button>
-            </div>
+            <Button
+              classNames="t-title -f20 -f14md -primary -mt100md -mb100md -mb48sm"
+              onClick={handleStart}
+            >
+              Start
+            </Button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
   );
 }
