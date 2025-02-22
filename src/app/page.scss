@@ -8,18 +8,18 @@
 
   &_content {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
 
     @include respond-below(md) {
       flex-direction: column;
+      height: 100dvh;
       padding: 0;
     }
   }
 
   &_background {
-    //position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,12 +76,18 @@
 
   .c-btn {
     width: 296px;
-    @include respond-below(sm) {
-      position: fixed;
+
+
+    @include respond-below(md) {
       width: calc(100% - 32px);
-      bottom: 64px;
-      left: 50%;
-      transform: translate(-50%, 0);
+      margin-top: 102px;
+      margin-bottom: 296px;
+    }
+
+    @include respond-below(sm) {
+      width: calc(100% - 32px);
+      margin-top: 102px;
+      margin-bottom: 48px;
     }
   }
 }
