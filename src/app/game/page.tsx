@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import './page.scss';
 import { useGameData } from '@/hooks';
 import { useGameStore } from '@/app/store/useGameStore';
-import { PrizesList, PrizesMenu, Question } from '@/app/game/components';
+import { RewardsList, RewardsMenu, Question } from '@/app/game/components';
 import { Skeleton } from '@/app/game/components/Question/questionSkeleton/QuestionSkeleton';
 
 export default function Game() {
@@ -29,9 +29,11 @@ export default function Game() {
   return (
     <Suspense fallback={(<Skeleton />) as ReactNode}>
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
+        key="game"
+        initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        exit={{ opacity: 0, scale: 0.9 }} // Fade-out transition
+        transition={{ duration: 0.6, ease: 'easeInOut' }}
       >
         <div className={'gameScreen'}>
           <div className={'gameScreen_question'}>
@@ -40,12 +42,12 @@ export default function Game() {
               hasNextQuestion={currentQuestionIndex < data.length - 1}
             />
           </div>
-          <PrizesMenu
+          <RewardsMenu
             questions={data}
             currentQuestionIndex={currentQuestionIndex}
           />
           <div className={'gameScreen_prizes'}>
-            <PrizesList
+            <RewardsList
               questions={data}
               currentQuestionIndex={currentQuestionIndex}
             />

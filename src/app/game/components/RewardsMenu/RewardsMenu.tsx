@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
+import { RewardsList } from '../RewardsList';
 import Menu from '@/assets/svg/Menu.svg';
 import Close from '@/assets/svg/Close.svg';
-import { PrizesList } from '../PrizesList';
-import './PrizesMenu.scss';
+import './RewardsMenu.scss';
 import { IQuestion } from '@/app/game/components/Question/types';
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
   currentQuestionIndex: number;
 }
 
-export const PrizesMenu = ({ questions, currentQuestionIndex }: Props) => {
+export const RewardsMenu = ({ questions, currentQuestionIndex }: Props) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
 
   const toggleMenu = () => {
@@ -37,7 +37,7 @@ export const PrizesMenu = ({ questions, currentQuestionIndex }: Props) => {
       <div
         className={`c-prizesMobile ${isMenuOpened ? 'c-prizesMobile--open' : ''}`}
       >
-        <PrizesList
+        <RewardsList
           questions={questions}
           currentQuestionIndex={currentQuestionIndex}
         />

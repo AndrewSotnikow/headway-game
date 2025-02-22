@@ -1,5 +1,5 @@
-import { formatPrize } from '@/lib/utils';
-import styles from './PrizesList.module.css';
+import { formatReward } from '@/lib/utils';
+import './RewardsList.scss';
 import { IQuestion } from '@/app/game/components/Question/types';
 import { Step } from '@/components/Step/Step';
 
@@ -8,16 +8,16 @@ interface Props {
   currentQuestionIndex: number;
 }
 
-export const PrizesList = ({ questions, currentQuestionIndex }: Props) => {
+export const RewardsList = ({ questions, currentQuestionIndex }: Props) => {
   return (
-    <div className={styles['prizes-list']}>
+    <div className={'c-rewardsList'}>
       {questions.map((question, index) => (
         <Step
           key={question.id}
           isCurrent={index === currentQuestionIndex}
           isAnswered={index < currentQuestionIndex}
         >
-          {formatPrize(question.reward)}
+          {formatReward(question.reward)}
         </Step>
       ))}
     </div>

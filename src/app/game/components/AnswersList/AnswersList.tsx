@@ -1,7 +1,8 @@
-import { AnswerComponent, Typography } from '@/components';
+import { Typography } from '@/components';
 import './AnswersList.scss';
 import { IAnswer } from '@/app/game/components/Question/types';
 import { ANSWER_LETTERS } from '@/app/game/constants';
+import { AnswerComponent } from '@/app/game/components/AnswerComponent/AnswerComponent';
 
 interface Props {
   answers: IAnswer[];

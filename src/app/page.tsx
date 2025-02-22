@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import Hero from '@/assets/svg/StartScreenImage.svg';
 import './page.scss';
 import { Button, Typography } from '@/components';
+import { GAME_START_DELAY } from '@/app/game/constants';
 
 export default function Home() {
   const router = useRouter();
@@ -14,7 +15,7 @@ export default function Home() {
 
   const handleStart = () => {
     setIsExiting(true);
-    setTimeout(() => router.push('/game'), 800);
+    setTimeout(() => router.push('/game'), GAME_START_DELAY);
   };
 
   return (

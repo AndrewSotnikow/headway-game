@@ -2,10 +2,10 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { ReactNode } from 'react';
 
-import { PrizesMenu } from './PrizesMenu';
+import { RewardsMenu } from './RewardsMenu';
 
-jest.mock('../PrizesList', () => ({
-  PrizesList: () => <div data-testid="prizes-list">PrizesList</div>,
+jest.mock('../RewardsList', () => ({
+  RewardsList: () => <div data-testid="prizes-list">RewardsList</div>,
 }));
 
 jest.mock('@/assets/svg/Menu.svg', () => {
@@ -34,7 +34,7 @@ const mockQuestions = [
   },
 ];
 
-describe('PrizesMenu Component', () => {
+describe('RewardsMenu Component', () => {
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -42,7 +42,7 @@ describe('PrizesMenu Component', () => {
   test('renders menu button correctly', () => {
     render(
       (
-        <PrizesMenu questions={mockQuestions} currentQuestionIndex={0} />
+        <RewardsMenu questions={mockQuestions} currentQuestionIndex={0} />
       ) as ReactNode,
     );
 
@@ -53,7 +53,7 @@ describe('PrizesMenu Component', () => {
   test('opens and closes the menu on button click', () => {
     render(
       (
-        <PrizesMenu questions={mockQuestions} currentQuestionIndex={0} />
+        <RewardsMenu questions={mockQuestions} currentQuestionIndex={0} />
       ) as ReactNode,
     );
 

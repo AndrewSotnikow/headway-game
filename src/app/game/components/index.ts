@@ -1,4 +1,4 @@
 export * from './Question';
-export * from './PrizesList';
-export * from './PrizesMenu';
+export * from './RewardsList';
+export * from './RewardsMenu';
 export * from './AnswersList';

@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 
+import { ACTION_DELAY } from '@/app/game/constants';
+
 const dataFilePath = path.join(process.cwd(), 'src/dataBase/gameData.json');
 
 const readGameData = () => {
@@ -9,12 +11,13 @@ const readGameData = () => {
     const fileContents = fs.readFileSync(dataFilePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (error) {
-    console.error('Error reading game data:', error);
-    return null;
+    throw new Error('Error reading game data:', error);
   }
 };
 
 export async function GET() {
+  await new Promise((resolve) => setTimeout(resolve, ACTION_DELAY));
+
   const gameData = readGameData();
   if (!gameData) {
     return NextResponse.json(
@@ -28,6 +31,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
+    await new Promise((resolve) => setTimeout(resolve, ACTION_DELAY));
+
     const { score, playerName } = await req.json();
 
     if (!playerName || typeof score !== 'number') {

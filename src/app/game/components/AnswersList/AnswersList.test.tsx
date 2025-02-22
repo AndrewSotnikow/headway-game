@@ -6,8 +6,7 @@ import { AnswersList } from './AnswersList';
 import { IAnswer } from '@/app/game/components/Question/types';
 import { ANSWER_LETTERS } from '@/app/game/constants';
 
-// Mock the AnswerComponent to isolate the AnswersList behavior
-jest.mock('@/components', () => ({
+jest.mock('@/app/game/components/AnswerComponent/AnswerComponent', () => ({
   AnswerComponent: ({
     children,
     isSelected,
