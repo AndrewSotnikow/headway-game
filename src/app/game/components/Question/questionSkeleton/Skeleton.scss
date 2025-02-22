@@ -32,6 +32,9 @@
     background: $color-gray-light;
     border-radius: 4px;
     animation: shimmer 1.5s infinite;
+    @include respond-below(md) {
+      height: 100px;
+    }
   }
 
   &_options {
