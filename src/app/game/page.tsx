@@ -22,7 +22,7 @@ export default function Game() {
     }
   }, [isGameOver, router]);
 
-  if (loading) {
+  if (loading && !data?.length) {
     return <Skeleton />;
   }
 

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 interface GameState {
   isGameOver: boolean;
@@ -38,7 +38,8 @@ export const useGameStore = create<GameState>()(
     }),
     {
       name: 'game-storage',
-      getStorage: () => localStorage,
+
+      storage: createJSONStorage(() => localStorage),
     },
   ),
 );
