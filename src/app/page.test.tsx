@@ -4,14 +4,14 @@ import '@testing-library/jest-dom';
 //
 // import Home from './page';
 //
-// jest.mock('@/assets/svg/StartScreenImage.svg', () => {
+// jest.dataBase('@/assets/svg/StartScreenImage.svg', () => {
 //   const HeroSvg = ({ className }: { className: string }) => (
 //     <svg data-testid="hero-svg" className={className} />
 //   );
 //   HeroSvg.displayName = 'HeroSvg';
 //   return HeroSvg;
 // });
-// jest.mock('@/components', () => ({
+// jest.dataBase('@/components', () => ({
 //   Button: ({
 //     className,
 //     children,

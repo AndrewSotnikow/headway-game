@@ -1,0 +1,48 @@
+@use '@/styles/base' as *;
+
+.gameScreen {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: $color-gray-light;
+
+  &_question {
+    padding: 133px 80px 122px 80px;
+    flex: 1;
+  }
+
+  &_prizes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 376px;
+    width: 376px;
+    background-color: $color-white-default;
+  }
+
+  @include respond-below(xl) {
+    &_question {
+      padding: 133px 80px 102px 80px;
+    }
+  }
+
+  @include respond-below(md) {
+    &_question {
+      padding: 80px 25px 60px 25px;
+    }
+    &_prizes {
+      min-width: 300px;
+      width: 300px;
+    }
+  }
+
+  @include respond-below(sm) {
+    &_question {
+      padding: 236px 0 16px;
+    }
+    &_prizes {
+      display: none;
+    }
+  }
+}

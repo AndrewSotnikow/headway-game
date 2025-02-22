@@ -15,7 +15,7 @@ describe('Button Component', () => {
     const button = screen.getByTestId('button');
     expect(button).toBeInTheDocument();
     expect(button).toHaveTextContent('Click me');
-    expect(button).toHaveClass('c-btn -primary');
+    expect(button).toHaveClass('c-btn');
     expect(button).not.toHaveClass('-disabled');
     expect(button).not.toHaveClass('-loading');
     expect(button).toHaveAttribute('type', 'button');
@@ -80,7 +80,7 @@ describe('Button Component', () => {
 
   // Test different layouts
   test('renders with secondary layout correctly', () => {
-    render(<Button layout="secondary">Secondary Button</Button>);
+    render(<Button classNames="-secondary">Secondary Button</Button>);
 
     const button = screen.getByTestId('button');
     expect(button).toHaveClass('-secondary');
@@ -88,7 +88,7 @@ describe('Button Component', () => {
   });
 
   test('renders with borderLess layout correctly', () => {
-    render(<Button layout="borderLess">Borderless Button</Button>);
+    render(<Button classNames="-borderLess">Borderless Button</Button>);
 
     const button = screen.getByTestId('button');
     expect(button).toHaveClass('-borderLess');

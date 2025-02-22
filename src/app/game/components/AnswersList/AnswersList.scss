@@ -1,0 +1,62 @@
+@use '@/styles/base' as *;
+
+/*========================================================================== */
+
+.c-answersList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 16px;
+  width: 100%;
+  max-width: 840px;
+  justify-content: center;
+  align-items: center;
+
+  @include respond-below(xl) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_answer {
+    width: 421px;
+    height: 72px;
+
+    @include respond-below(md) {
+      width: 100%;
+      height: 56px;
+
+      span {
+        width: 100%;
+      }
+
+      > div {
+        min-width: 288px;
+      }
+    }
+  }
+
+  &_answer-text {
+    font-size: 20px;
+    display: flex;
+    gap: 8px;
+
+    @include respond-below(sm) {
+      font-size: 14px;
+    }
+  }
+
+  &_label {
+    color: $color-orange-default;
+    font-weight: 600;
+  }
+
+  @include respond-below(md) {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
