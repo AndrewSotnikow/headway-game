@@ -44,6 +44,7 @@ export default function GameOver() {
               >
                 Total score:
               </Typography>
+
               <Typography
                 tag="h2"
                 classNames={[
