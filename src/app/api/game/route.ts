@@ -11,7 +11,7 @@ const readGameData = () => {
     const fileContents = fs.readFileSync(dataFilePath, 'utf8');
     return JSON.parse(fileContents);
   } catch (error) {
-    throw new Error('Error reading game data:', error);
+    throw new Error(`Error reading game data: ${error}`);
   }
 };
 
