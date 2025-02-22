@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { ACTION_DELAY } from '../../constants';
@@ -21,43 +21,60 @@ export const Question = ({ question, hasNextQuestion }: Props) => {
   const { onNextQuestionMove, onGameOver } = useGameStore();
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [isAnswerShown, setIsAnswerShown] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  const handleCorrectAnswer = () => {
+    timeoutRef.current = setTimeout(() => {
+      setSelectedAnswers([]);
+      setIsAnswerShown(false);
+      onNextQuestionMove(question.reward);
+    }, ACTION_DELAY);
+  };
+
+  const handleGameOver = () => {
+    timeoutRef.current = setTimeout(() => {
+      router.push('/game-over');
+      onGameOver(question.reward);
+    }, ACTION_DELAY);
+  };
 
   const onAnswersCheck = (userAnswers: string[]) => {
     if (userAnswers.length !== question.minCorrectAnswersCount) return;
 
-    setIsAnswerShown(true);
+    setTimeout(() => {
+      setIsAnswerShown(true);
+    }, 300);
 
     if (
       getIsAllAnswersCorrect(question.answers, userAnswers) &&
       hasNextQuestion
     ) {
-      setTimeout(() => {
-        setSelectedAnswers([]);
-        setIsAnswerShown(false);
-        onNextQuestionMove(question.reward);
-      }, ACTION_DELAY);
-      return;
+      handleCorrectAnswer();
+    } else {
+      handleGameOver();
     }
-
-    setTimeout(() => {
-      router.push('/c-gameOver');
-      onGameOver(question.reward);
-    }, ACTION_DELAY);
   };
 
   const onAnswerSelect = (answerId: string) => {
     if (isAnswerShown) return;
 
-    const updatedAnswers = selectedAnswers.includes(answerId)
-      ? selectedAnswers.filter((id) => id !== answerId)
-      : [...selectedAnswers, answerId];
+    setSelectedAnswers((prev) =>
+      prev.includes(answerId)
+        ? prev.filter((id) => id !== answerId)
+        : [...prev, answerId],
+    );
 
-    setSelectedAnswers(updatedAnswers);
-    onAnswersCheck(updatedAnswers);
+    onAnswersCheck([...selectedAnswers, answerId]);
   };
 
   return (
-    <div className={'question'}>
+    <div className="question">
       <Typography tag="h2" classNames={['question_text', '-f32', '-f18md']}>
         {question.text}
       </Typography>
