@@ -13,7 +13,14 @@
     font-size: 32px;
     font-weight: 600;
     color: $color-black-default;
+    margin-left: 80px;
+
+    @include respond-below(md) {
+      margin-left: 25px;
+    }
   }
+
+
 
   @include respond-below(sm) {
     &_text {
@@ -21,6 +28,7 @@
       text-align: center;
       font-size: 18px;
       padding: 0 16px;
+      margin-left: 0;
     }
   }
 }

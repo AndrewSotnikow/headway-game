@@ -11,9 +11,13 @@
   justify-content: center;
   align-items: center;
 
-  @include respond-below(xl) {
+  @include respond-below(lg) {
     display: flex;
     flex-direction: column;
+  }
+
+  @include respond-below(md) {
+    max-width: 100%;
   }
 
   &_answer {
@@ -25,11 +29,17 @@
       height: 56px;
 
       span {
-        width: 100%;
+        width: 20%;
       }
 
       > div {
         min-width: 288px;
+      }
+    }
+
+    @include respond-below(sm) {
+      span {
+        width: 10%;
       }
     }
   }

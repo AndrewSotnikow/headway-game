@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 interface GameState {
   isGameOver: boolean;
@@ -23,10 +23,9 @@ export const useGameStore = create<GameState>()(
           currentQuestionIndex: state.currentQuestionIndex + 1,
         })),
 
-      onGameOver: (questionPrize: number) =>
+      onGameOver: () =>
         set(() => ({
           isGameOver: true,
-          totalPrize: questionPrize,
         })),
 
       onGameReset: () =>
@@ -38,7 +37,8 @@ export const useGameStore = create<GameState>()(
     }),
     {
       name: 'game-storage',
-      getStorage: () => localStorage,
+
+      storage: createJSONStorage(() => localStorage),
     },
   ),
 );

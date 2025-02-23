@@ -1,15 +1,16 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import { ACTION_DELAY } from '../../constants';
+import { DELAY_1000, DELAY_300 } from '../../constants';
 import { getIsAllAnswersCorrect } from '@/lib/utils';
 import { Typography } from '@/components';
 import './Question.scss';
 import { IQuestion } from '@/app/game/components/Question/types';
 import { useGameStore } from '@/app/store/useGameStore';
 import { AnswersList } from '@/app/game/components/AnswersList';
+import { useTimeoutHook } from '@/hooks';
 
 interface Props {
   question: IQuestion;
@@ -18,38 +19,31 @@ interface Props {
 
 export const Question = ({ question, hasNextQuestion }: Props) => {
   const router = useRouter();
-  const { onNextQuestionMove, onGameOver } = useGameStore();
+  const { onNextQuestionMove } = useGameStore();
   const [selectedAnswers, setSelectedAnswers] = useState<string[]>([]);
   const [isAnswerShown, setIsAnswerShown] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, []);
+  const timeoutRef = useTimeoutHook();
 
   const handleCorrectAnswer = () => {
     timeoutRef.current = setTimeout(() => {
       setSelectedAnswers([]);
       setIsAnswerShown(false);
       onNextQuestionMove(question.reward);
-    }, ACTION_DELAY);
+    }, DELAY_1000);
   };
 
   const handleGameOver = () => {
     timeoutRef.current = setTimeout(() => {
       router.push('/game-over');
-      onGameOver(question.reward);
-    }, ACTION_DELAY);
+    }, DELAY_1000);
   };
 
   const onAnswersCheck = (userAnswers: string[]) => {
     if (userAnswers.length !== question.minCorrectAnswersCount) return;
 
-    setTimeout(() => {
+    timeoutRef.current = setTimeout(() => {
       setIsAnswerShown(true);
-    }, 300);
+    }, DELAY_300);
 
     if (
       getIsAllAnswersCorrect(question.answers, userAnswers) &&

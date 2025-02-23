@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 
+import { IQuestion } from '@/app/game/components/Question/types';
+
 export const useGameData = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<IQuestion[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,7 +18,9 @@ export const useGameData = () => {
 
         setData(result.data.questions);
       } catch (err) {
-        throw new Error(err.message);
+        const errorMessage =
+          err instanceof Error ? err.message : 'Unknown error';
+        throw new Error(errorMessage);
       } finally {
         setLoading(false);
       }

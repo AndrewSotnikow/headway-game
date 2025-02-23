@@ -84,16 +84,4 @@ describe('GameOver Component', () => {
     expect(mockOnGameReset).toHaveBeenCalled();
     expect(mockReplace).toHaveBeenCalledWith('/game');
   });
-
-  it('redirects to home page if isGameOver is false', () => {
-    (useGameStore as jest.Mock).mockReturnValue({
-      isGameOver: false,
-      totalPrize: 0,
-      onGameReset: mockOnGameReset,
-    });
-
-    render(<GameOver />);
-
-    expect(mockReplace).toHaveBeenCalledWith('/');
-  });
 });

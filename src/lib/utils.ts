@@ -11,10 +11,6 @@ export const getIsAllAnswersCorrect = (
   return userAnswers.every((answerId) => correctAnswers.has(answerId));
 };
 
-export const formatReward = (cents: number): string => {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-  }).format(cents / 100);
+export const formatReward = (num: number): string => {
+  return `$ ${num.toLocaleString('en-US')}`;
 };

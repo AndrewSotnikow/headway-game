@@ -22,7 +22,7 @@ export default function Game() {
     }
   }, [isGameOver, router]);
 
-  if (loading) {
+  if (loading && !data?.length) {
     return <Skeleton />;
   }
 
@@ -32,7 +32,7 @@ export default function Game() {
         key="game"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }} // Fade-out transition
+        exit={{ opacity: 0, scale: 0.9 }}
         transition={{ duration: 0.6, ease: 'easeInOut' }}
       >
         <div className={'gameScreen'}>

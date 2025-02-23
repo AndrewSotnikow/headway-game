@@ -4,7 +4,7 @@ export interface IButtonProps {
   loading?: boolean;
   disabled?: boolean;
   children: React.ReactNode;
-  css?: string;
+  classNames?: string;
   onClick?: () => void;
   icon?: ReactNode; // Accepts any icon component
   iconPosition?: 'left' | 'right'; // Determines icon placement
